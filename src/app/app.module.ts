@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 
-
+//Shore: Module is the brick of angular4 app.
 @NgModule({
   declarations: [
     AppComponent
