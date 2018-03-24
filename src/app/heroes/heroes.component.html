@@ -1,0 +1,48 @@
+
+<!-- 表达式上下文
+1. 组件 （是主力， 即class AppComponent中定义的）
+2. 模板输入变量 (let hero)
+3. 模板引用变量(#heroInput) ： 模板引用变量通常用来引用模板中的某个DOM元素，它还可以引用Angular组件或指令或Web Component。
+#phone的意思就是声明一个名叫phone的变量来引用<input>元素。
+<input #phone placeholder="phone number">
+<button (click)="callPhone(phone.value)">Call</button>
+注意： 模板表达式不能引用全局命名空间中的任何东西，比如window或document。它们也不能调用console.log或Math.max。 它们只能引用表达式上下文中的成员。
+-->
+  <h1>{{title}}</h1>
+  <h2>My heros</h2>
+  <ul class="heroes">
+  <!--
+  数据绑定是一种机制，用来协调用户所见和应用数据。 
+  虽然我们能往 HTML 推送值或者从 HTML 拉取值(shore 比如 通过javascript赋值)， 但如果把这些琐事交给数据绑定框架处理， 应用会更容易编写、阅读和维护。 只要简单地在绑定源和目标 HTML 元素之间声明绑定，框架就会完成这项工作。
+
+
+
+  -->
+    <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+  </ul>
+  <!-- 
+  星号是一个用来简化更复杂语法的“语法糖”。 从内部实现来说，Angular把*ngIf 属性 翻译成一个<ng-template> 元素 并用它来包裹宿主元素，代码如下：
+  <div *ngIf="hero" >{{hero.name}}</div>
+  变为
+  <ng-template [ngIf]="hero">
+    <div>{{hero.name}}</div>
+  </ng-template>
+  
+  第一种形态永远不会真的渲染出来。 只有最终产出的结果才会出现在DOM中。
+  <!-- bindings={"ng-reflect-ng-if":"[Object Object]"}
+  <div _ngcontent-c0>Mr. Nice </div>
+  -->
+  <div *ngIf="selectedHero">
+    <!-- Shore: how uppercase is injected?-->
+    <h2>{{selectedHero.name | uppercase }} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </div>
+  </div>
+  
