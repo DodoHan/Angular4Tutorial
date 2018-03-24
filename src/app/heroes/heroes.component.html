@@ -18,31 +18,14 @@
 
 
   -->
+  <!-- Shore: class.selected 是什么? -->
     <li *ngFor="let hero of heroes"
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
-  <!-- 
-  星号是一个用来简化更复杂语法的“语法糖”。 从内部实现来说，Angular把*ngIf 属性 翻译成一个<ng-template> 元素 并用它来包裹宿主元素，代码如下：
-  <div *ngIf="hero" >{{hero.name}}</div>
-  变为
-  <ng-template [ngIf]="hero">
-    <div>{{hero.name}}</div>
-  </ng-template>
   
-  第一种形态永远不会真的渲染出来。 只有最终产出的结果才会出现在DOM中。
-  <!-- bindings={"ng-reflect-ng-if":"[Object Object]"}
-  <div _ngcontent-c0>Mr. Nice </div>
-  -->
-  <div *ngIf="selectedHero">
-    <!-- Shore: how uppercase is injected?-->
-    <h2>{{selectedHero.name | uppercase }} details!</h2>
-    <div><label>id: </label>{{selectedHero.id}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-    </div>
-  </div>
+  <!-- Shore: 接力 -->
+  <app-hero-detail [hero] = "selectedHero"></app-hero-detail>
   
