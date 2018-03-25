@@ -1,18 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Hero from '../model/hero';
-
-const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
+import HeroService from '../service/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -21,15 +9,22 @@ const HEROES: Hero[] = [
 })
 export class HeroesComponent implements OnInit {
   title:string = 'Tour of Heroes';
-  heroes:Hero[] = HEROES;
+  heroService:HeroService;
+  heroes:Hero[];
   selectedHero: Hero;
  
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-  constructor() { }
+  /**
+   * 让构造函数保持简单，只做初始化操作，比如把构造函数的参数赋值给属性。 构造函数不应该做任何事。 它肯定不能调用某个函数来向远端服务（比如真实的数据服务）发起 HTTP 请求。
+   */
+  constructor(heroService:HeroService) {
+    this.heroService=heroService;
+   }
 
   ngOnInit() {
+    this.heroService.getHeroes$().subscribe(heroes=>this.heroes=heroes);
   }
 
 }
