@@ -30,4 +30,8 @@ export default class HeroService {
   getHeroes$():Observable<Hero[]>{
     return of(HEROES);
   }
+
+  getHero$(id:number):Observable<Hero>{
+    return of(HEROES[id-11]);
+  }
 }

@@ -19,13 +19,10 @@
 
   -->
   <!-- Shore: class.selected 是什么? -->
-    <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
     </li>
   </ul>
-  
-  <!-- Shore: 接力 -->
-  <app-hero-detail [hero] = "selectedHero"></app-hero-detail>
   
