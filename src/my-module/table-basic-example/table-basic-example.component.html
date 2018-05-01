@@ -1,0 +1,49 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSourceShore">
+      <!-- Shore: 第一部分定义出列， 给出列名和列名下对应的cell的关系
+      -->
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="positionColumnDef">
+        <mat-header-cell *matHeaderCellDef class='style-class'> No.Display </mat-header-cell>
+        <!-- Shore: element is one item from dataSource-->
+        <mat-cell *matCellDef="let element"> {{element.position}}
+        <a>
+          testLink
+        <br/>
+          placeHolder
+        <br/>
+          <a routerLink="/heroes">view</a>
+        </a>  
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nameColumnDef">
+        <mat-header-cell *matHeaderCellDef> NameDisplay </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weightColumnDef">
+        <mat-header-cell *matHeaderCellDef> WeightDisplay </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbolColumnDef">
+        <mat-header-cell *matHeaderCellDef> SymbolDisplay </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+  
+      <!-- Shore: 第二部分 定义出 table， 
+        1. 表头：table有哪些列（列的顺序由displayedColumns中的顺序给出）
+        2. 表体中的某行： 有哪些列， 注意： columns冒号后的值可以不是表头的那个数组
+      -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <!-- Shore: 问题： 这个columns:displayedColumns 是什么语法 -->
+      <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+    </mat-table>
+  </div>
