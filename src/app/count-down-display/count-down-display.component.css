@@ -1,0 +1,10 @@
+/*
+Shore's Note: div is relative!!
+*/
+div {
+    padding: 22px 5px 5px 75px;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    font-size: 63px;
+}

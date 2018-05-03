@@ -9,13 +9,18 @@ import HeroService from './service/hero.service';
 
 import {AppRoutingModule} from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CountDownDisplayComponent } from './count-down-display/count-down-display.component';
+import { RocketLauncherConsoleComponent } from './rocket-launcher-console/rocket-launcher-console.component';
+
 //Shore: Module is the brick of angular4 app.
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    CountDownDisplayComponent,
+    RocketLauncherConsoleComponent
   ],
   imports: [
     BrowserModule,

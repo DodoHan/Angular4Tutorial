@@ -1,0 +1,25 @@
+<!--
+<div class="rocket-launcher-console">
+  Call child's func by local varible. but the two ways can't exist at the same time.
+<count-down-display [totalSeconds]='10' [selfStart]='false' (onDown2Zero)="onDown2ZeroInConsole($event)" class='count-down' #timer >
+</count-down-display>
+  <button (click)="timer.start()">Start</button>
+<button (click)="timer.stop()">Stop</button>
+<div>
+{{message}}
+</div>
+</div>
+-->
+
+
+<div class="rocket-launcher-console">
+  Call child's func more flexible: by @ViewChild. but the two ways can't exist at the same time.
+    <count-down-display [totalSeconds]='10' [selfStart]='false' (onDown2Zero)="onDown2ZeroInConsole($event)" class='count-down' #timer >
+    </count-down-display>
+      <button (click)="startInRocketLauncherConsole()">Start</button>
+    <button (click)="stopInRocketLauncherConsole()">Stop</button>
+    <div>
+    {{message}}
+    </div>
+</div>
+
