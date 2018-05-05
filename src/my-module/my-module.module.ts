@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule }   from '../app/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 /*
@@ -55,7 +55,7 @@ import { TableBasicExampleComponent } from './table-basic-example/table-basic-ex
     TableBasicExampleComponent
   ],
   imports: [
-    BrowserModule,
+    SharedModule,
     MatTableModule,
     RouterModule
   ],

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule }   from '../shared/shared.module';
 import { CrisisListComponent }      from './crisis-list/crisis-list.component';
 import { CrisisDetailComponent }  from './crisis-detail/crisis-detail.component';
 import { CrisisCenterComponent } from  './crisis-center.component';
@@ -11,7 +11,7 @@ import { CrisisCenterRoutingModule } from  './crisis-center-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     CrisisCenterRoutingModule
   ],
   declarations: [

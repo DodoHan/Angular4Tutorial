@@ -1,6 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
+//import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
+import { SharedModule }   from '../shared/shared.module';
+
 
 //import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -21,8 +23,7 @@ import {HeroesRoutingModule} from './heroes-routing.module';
     HeroDetailComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule, 
+    SharedModule, 
     HeroesRoutingModule
   ],
   providers: [HeroService]

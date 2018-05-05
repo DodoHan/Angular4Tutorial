@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
+import { SharedModule }   from './shared/shared.module'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 //import { HeroesComponent } from './heroes/heroes.component';
@@ -24,7 +24,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
+    SharedModule, // <-- import the FormsModule before binding with [(ngModel)]
     //Shore： 注意：不是AppRoutingModule.RouterModule 为什么？
     HeroesModule,
     AppRoutingModule,
