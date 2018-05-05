@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title = 'set in ngOnInit';
+    this.title = 'Router';
   }
 }

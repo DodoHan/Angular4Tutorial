@@ -20,7 +20,8 @@
   -->
   <!-- Shore: class.selected 是什么? -->
     <li *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{hero.id}}">
+      <!--Shore note: relative url is related to the current url-->
+      <a routerLink="../hero/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
     </li>

@@ -1,18 +1,6 @@
 <h1>{{title}}</h1>
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="./crisis-center/crisis-info" routerLinkActive="active">Crisis center</a>
+  <a routerLink="./heroes" routerLinkActive="active">Heroes</a>
 </nav>
-<!-- binding (from var in component to page) format 1  -->
-<hello-world [name]='title'></hello-world>
-<!-- binding (from var in component to page) format 2 -->
-<hello-world name={{title}}> </hello-world>
-<hello-world name='fixedName'></hello-world>
-<!-- Shore: note the value of *appUnless can be not field in appComponent -->
-<div *appUnless="false">
-  hello unless take effect.
-</div>
-
-<table-basic-example></table-basic-example>
-
 <router-outlet></router-outlet>

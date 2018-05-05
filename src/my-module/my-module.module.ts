@@ -59,7 +59,7 @@ import { TableBasicExampleComponent } from './table-basic-example/table-basic-ex
     MatTableModule,
     RouterModule
   ],
-  //exports is not only module but also component/directive/pipe
+  //Shore: exports is not only module but also component/directive/pipe
   exports:[
     HelloWorldComponent,
     UnlessDirective,
